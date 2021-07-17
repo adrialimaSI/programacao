@@ -8,11 +8,11 @@ class Conta:
         self.saldo = saldo
         self.pessoa = Pessoa
 
-    def getsaldo (self):
-            return self.saldo
+    def setsaldo (self, saldonovo):
+        self.saldo = saldonovo
 
-    def setsaldo (self, valor):
-            self.saldo = valor
+    def getsaldo (self):
+            return self._saldo
 
     def saque (self, valor):
         if self.saldo >= valor:
@@ -24,10 +24,13 @@ class Conta:
 class ContaCorrente (Conta):
     def pagataxa (self, taxa):
         self.saldo += (self.saldo - taxa)
-
+    
 class ContaPoupanca (Conta):
     def depositar (self, taxa)
         self.saldo += (self.saldo * taxa)
 
-objPessoa =
-   
+objpessoa = Pessoa ("Adria, 91199933320, 123456")
+objcc = ContaCorrente ("") #falta ligar o objeto a pessoa
+objcp = ContaPoupanca ("")
+
+Conta.Taxado()

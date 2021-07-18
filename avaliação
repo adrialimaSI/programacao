@@ -4,7 +4,7 @@ class Pessoa:
         self.cpf = CPF
 
 class Conta:
-    def __init__(self, saldo, pessoa ):
+    def __init__(self, saldo, pessoa):
         self.saldo = saldo
         self.pessoa = Pessoa
 
@@ -22,15 +22,37 @@ class Conta:
         self.saldo += valor
        
 class ContaCorrente (Conta):
+    def __init__(self, pessoa):
+        self.pessoa = pessoa
+
     def pagataxa (self, taxa):
         self.saldo += (self.saldo - taxa)
-    
+
+    def deposito(self, valor):
+       self.saldo += valor
+
+    def saque(self, valor): 
+       def saque(self, valor):
+
+        if valor < (self.saldo):
+            self.saldo -= valor
+        else:
+            print ('Saldo insuficiente')
+
 class ContaPoupanca (Conta):
-    def depositar (self, taxa)
-        self.saldo += (self.saldo * taxa)
+     def __init__(self, pessoa, deposito):
+        self.pessoa = pessoa
 
-objpessoa = Pessoa ("Adria, 91199933320, 123456")
-objcc = ContaCorrente ("") #falta ligar o objeto a pessoa
-objcp = ContaPoupanca ("")
+        def deposito(self, valor):
+            self.saldo += (valor * 90)
 
-Conta.Taxado()
+        def saque(self, valor): 
+            def saque(self, valor):
+
+                if valor < (self.saldo):
+                    self.saldo -= valor
+                else:
+                    print ('Saldo insuficiente')
+
+objpessoa = Pessoa ("Adria", "91199933320", "123456")
+objcc = ContaCorrente (objpessoa)
